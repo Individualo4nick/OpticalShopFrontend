@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 import Navigation from "./Navigation";
+import HomeCSS from "../styles/Home.module.css";
 
 const Home = () => {
     const { setAuth } = useContext(AuthContext);
@@ -31,16 +32,16 @@ const Home = () => {
             <section>
                 <h1>Добро пожаловать в магазин оптики "ПроЗрение"</h1>
                 <div className="flexGrow">
-                    <button onClick={register}>Регистрация</button>
+                    <button onClick={register} className={HomeCSS.button}>Регистрация</button>
                 </div>
                 <div className="flexGrow">
-                    <button onClick={login}>Войти</button>
+                    <button onClick={login} className={HomeCSS.button}>Войти</button>
                 </div>
                 <div className="flexGrow">
-                    <button onClick={products}>Список товаров</button>
+                    <button onClick={products} className={HomeCSS.button}>Список товаров</button>
                 </div>
                 <div className="flexGrow">
-                    <button onClick={logout}>Выйти</button>
+                    <button onClick={logout} className={HomeCSS.button}>Выйти</button>
                 </div>
             </section>
         </div>

@@ -57,7 +57,7 @@ const Navigation = () => {
                 )}
                 {roles.includes(5150) && (
                     <li>
-                        <div><a href="/admin/product/create">Создать продукт</a></div>
+                        <div><a href="/admin/product/create">Создать товар</a></div>
                     </li>
                 )}
                 {roles.includes(5150) && (

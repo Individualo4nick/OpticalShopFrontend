@@ -194,7 +194,7 @@ const ProductPage = () => {
                                 {isFavorite ? '❤️' : '🤍'}
                             </button>
                             <div className={OneProductCSS.productInfo}>
-                                <img src={`http://87.242.102.79:80/product/image/download/${product.id}`}
+                                <img src={`http://192.144.14.39:80/product/image/download/${product.id}`}
                                      alt={product.title}
                                      className={OneProductCSS.img}/>
                                 <div className={OneProductCSS.textContainer}>

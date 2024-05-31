@@ -31,7 +31,7 @@ const CreateProductPage = () => {
             if (imageFile) {
                 const formData = new FormData();
                 formData.append('multipartFile', imageFile); // Добавляем файл в FormData
-                await axiosPrivate.post(`/product/image/upload/${productId}`, formData, {
+                await axiosPrivate.post(`/admin/product/image/upload/${productId}`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data' // Устанавливаем правильный заголовок для FormData
                     }
@@ -54,7 +54,7 @@ const CreateProductPage = () => {
         <div>
             <Navigation/>
             <div className={CreateProductCSS.container}>
-                <h1>Создать продукт</h1>
+                <h1>Создать товар</h1>
                 <label className={CreateProductCSS.label}>
                     Наименование:
                     <input
@@ -114,7 +114,7 @@ const CreateProductPage = () => {
                         className={CreateProductCSS.input}
                     />
                 </label>
-                <button onClick={handleCreateProduct} className={CreateProductCSS.button}>Create Product</button>
+                <button onClick={handleCreateProduct} className={CreateProductCSS.button}>Создать товар</button>
             </div>
         </div>
     );

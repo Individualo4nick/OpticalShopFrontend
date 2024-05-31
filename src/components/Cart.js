@@ -72,15 +72,20 @@ const CartPage = () => {
         if (confirmPayment) {
             try {
                 const cartIds = cartItems.map((item) => item.id);
-                const body = {
-                    cartIds: cartIds,
-                    login: login,
-                    price: calculateTotalPrice(),
-                };
-                await axiosPrivate.post("/order/create", body);
-                console.log("Payment successful!");
-                const response = await axiosPrivate.get("/cart");
-                setCartItems(response.data);
+                if (cartIds.length > 0) {
+                    const body = {
+                        cartIds: cartIds,
+                        login: login,
+                        price: calculateTotalPrice(),
+                    };
+                    await axiosPrivate.post("/order/create", body);
+                    console.log("Payment successful!");
+                    const response = await axiosPrivate.get("/cart");
+                    setCartItems(response.data);
+                }
+                else {
+                    window.alert("Сначала добавьте товары в корзину!");
+                }
             } catch (error) {
                 console.error("Error making payment:", error);
             }
@@ -98,7 +103,7 @@ const CartPage = () => {
                             <div>
                                 <div>
                                     <img
-                                        src={`http://87.242.102.79:80/product/image/download/${item.productDto.id}`}
+                                        src={`http://192.144.14.39:80/product/image/download/${item.productDto.id}`}
                                         alt={item.productDto.title}
                                         className={CartCSS.img}
                                     />

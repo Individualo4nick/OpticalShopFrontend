@@ -64,7 +64,7 @@ const Home = () => {
                         <button onClick={profile} className={HomeCSS.button}>Профиль</button>
                     </div>
                 )}
-                {!loggedIn && (
+                {loggedIn && (
                     <div className="flexGrow">
                         <button onClick={logout} className={HomeCSS.button}>Выйти</button>
                     </div>
